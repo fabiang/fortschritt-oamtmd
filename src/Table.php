@@ -69,13 +69,18 @@ class Table
 
         return $ranges;
     }
-    
-    public function days($max)
+
+    /**
+     * Generate days overview.
+     *
+     * @return array
+     */
+    public function days()
     {
         $days = array();
         foreach ($this->data as $data) {
             $day = $data->getBookingDate()->format('d.m.Y');
-            
+
             if (!isset($days[$day])) {
                 $days[$day] = array(
                     'day'     => $data->getBookingDate()->format('j'),

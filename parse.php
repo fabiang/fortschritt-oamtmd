@@ -24,5 +24,5 @@ $table = new Table($csv);
 $template = $twig->loadTemplate('fortschritt.html.twig');
 file_put_contents(__DIR__ . '/index.html', $template->render(array(
     'ranges' => $table->generate(500, 6450),
-    'days'   => $table->days(6450),
+    'days'   => $table->days(),
 )));
