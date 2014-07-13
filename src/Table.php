@@ -94,6 +94,14 @@ class Table
         return $days;
     }
 
+    /**
+     * Generate step listing.
+     * 
+     * @param array   $ranges
+     * @param integer $steps
+     * @param integer $max
+     * @return array
+     */
     public function steps(array $ranges, $steps, $max)
     {
         $stepList = array();
@@ -109,17 +117,23 @@ class Table
                     $colspanNext = ($max - $colspanTotal) / 2;
                 }
             }
-            
+
             $stepList[] = array(
                 'value'   => $i * $steps,
                 'colspan' => $colspan + $colspanNext,
             );
-            
+
             $colspanTotal += $colspan + $colspanNext;
         }
         return $stepList;
     }
-    
+
+    /**
+     * Collect colspans from ranges.
+     *
+     * @param array $days
+     * @return integer
+     */
     protected function getColspans(array $days)
     {
         $colspan = 0;
