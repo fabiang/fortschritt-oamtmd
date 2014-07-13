@@ -27,13 +27,16 @@
                     </tr>
                 </thead>
 
-                {#<tfoot>
+                <tfoot>
                     <tr>
-                    {% for i in 0..6450 %}
-                        <td>-</td>
+                        <td></td>
+                    {% for step in steps %}
+                        <td colspan="{{ step.colspan }}" class="step{% if loop.first == true %} left{% endif %}">
+                            {{ step.value|number_format(0, '', '.') }}
+                        </td>
                     {% endfor %}
                     </tr>
-                </tfoot>#}
+                </tfoot>
 
                 <tbody>
                     <tr>

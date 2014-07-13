@@ -19,10 +19,12 @@ $csvPath = 'https://raw.githubusercontent.com/fabiang/pkb-oamtmd/master/umsaetze
 $parser = new ParseCsv($csvPath, 1, 'ISO-8859-1');
 $csv = array_reverse($parser->parse(new Revenue()));
 
-$table = new Table($csv);
+$table  = new Table($csv);
+$ranges = $table->generate(500, 6450);
 
 $template = $twig->loadTemplate('fortschritt.html.twig');
 file_put_contents(__DIR__ . '/index.html', $template->render(array(
-    'ranges' => $table->generate(500, 6450),
+    'ranges' => $ranges,
     'days'   => $table->days(),
+    'steps'  => $table->steps($ranges, 500, 6450),
 )));

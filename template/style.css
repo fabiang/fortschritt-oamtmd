@@ -36,14 +36,14 @@ h1, h2, h3, h4, h5, h6, b, strong {
 }
 
 a {
-    font-family: sans-serif;
+    font-family: dax-regular, sans-serif;
     color: #fff;
     font-size: 2em;
     text-decoration: none;
 }
 
 p {
-    font-family: sans-serif;
+    font-family: dax-regular, sans-serif;
     color: #fff;
     font-size: 2em;
     color: black;
@@ -65,7 +65,7 @@ table thead {
     background-color: #7f7f7f;
 }
 
-table thead th:first-child, table tbody td:first-child {
+table thead th:first-child, table tbody td:first-child, table tfoot td:first-child {
     padding-left: 3em;
 }
 
@@ -105,4 +105,18 @@ table tbody td.positive.even {
 
 table tbody td.last {
     border-right: 1px solid black;
+}
+
+table tfoot td {
+    padding-top: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+table tfoot td.step {
+    font: 200% dax-regular, sans-serif;
+}
+
+table tfoot td.step.left {
+    text-align: left;
 }

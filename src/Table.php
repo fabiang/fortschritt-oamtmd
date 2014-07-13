@@ -93,4 +93,39 @@ class Table
 
         return $days;
     }
+
+    public function steps(array $ranges, $steps, $max)
+    {
+        $stepList = array();
+        $colspanTotal = 0;
+        foreach ($ranges as $i => $range) {
+            $colspan     = ceil($this->getColspans($range['days']) / 2);
+            $colspanNext = 0;
+
+            if ($i > 0) {
+                if (isset($ranges[$i + 1])) {
+                    $colspanNext = ceil($this->getColspans($ranges[$i + 1]['days']) / 2);
+                } else {
+                    $colspanNext = ($max - $colspanTotal) / 2;
+                }
+            }
+            
+            $stepList[] = array(
+                'value'   => $i * $steps,
+                'colspan' => $colspan + $colspanNext,
+            );
+            
+            $colspanTotal += $colspan + $colspanNext;
+        }
+        return $stepList;
+    }
+    
+    protected function getColspans(array $days)
+    {
+        $colspan = 0;
+        foreach ($days as $day) {
+            $colspan += $day['colspan'];
+        }
+        return $colspan;
+    }
 }
