@@ -1,0 +1,30 @@
+{
+    "name": "fabiang/fortschritt-oamtmd",
+    "description": "fortschritt.ordnungsamt-machteburg.de",
+    "type": "project",
+    "license": "BSD-2-Clause",
+    "homepage": "http://fortschritt.ordnungsamt-machteburg.de/",
+    "authors": [
+        {
+            "name": "Fabian Grutschus",
+            "email": "f.grutschus@lubyte.de",
+            "homepage": "http://www.lubyte.de/",
+            "role": "developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Fabiang\\Fortschritt\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.3",
+        "twig/twig": "1.*",
+        "components/normalize.css": "~2.1"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

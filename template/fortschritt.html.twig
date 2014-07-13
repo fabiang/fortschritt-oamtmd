@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Fortschritt</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="components/normalize-css/normalize.css"/>
+        <link rel="stylesheet" href="template/style.css"/>
+    </head>
+    <body>
+        <div id="progress">
+            <a href="https://github.com/fabiang/pkb-oamtmd/blob/master/umsaetze.csv">github.com/fabiang/pkb-oamtmd/blob/master/<b>umsaetze.csv</b></a>
+            <p>IBAN: <b>DE82830944950003294200</b></p>
+        </div>
+
+        <div id="progress-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                    {% for day in days %}
+                        <th colspan="{{ day.colspan }}" class="{% if loop.index % 2 %}odd{% else %}even{% endif %}">
+                            {{ day.day }}
+                        </th>
+                    {% endfor %}
+                    </tr>
+                </thead>
+
+                {#<tfoot>
+                    <tr>
+                    {% for i in 0..6450 %}
+                        <td>-</td>
+                    {% endfor %}
+                    </tr>
+                </tfoot>#}
+
+                <tbody>
+                    <tr>
+                        <td></td>
+                    {% for step in ranges %}
+                        {% for day in step.days %}
+                            <td colspan="{{ day.colspan }}"
+                                class="{% if day.value < 0 %}negative{% elseif day.value > 0 %}positive{% else %}neutral{% endif %} {% if loop.index % 2 %}odd{% else %}even{% endif %}{% if loop.last == true %} last{% endif %}"
+                                style="width: {{ day.colspan }}px;"
+                                {% if day.title != null %}title="{{ day.title|e }}"{% endif %}>
+                                {{ day.value }}
+                            </td>
+                        {% endfor %}
+                    {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

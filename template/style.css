@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'dax-regular';
+    src: url('../font/dax-regular-webfont.eot');
+    src: url('../font/dax-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/dax-regular-webfont.woff') format('woff'),
+        url('../font/dax-regular-webfont.ttf') format('truetype'),
+        url('../font/dax-regular-webfont.svg#dax-regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dax-bold';
+    src: url('../font/dax_bold-webfont.eot');
+    src: url('../font/dax_bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/dax_bold-webfont.woff') format('woff'),
+        url('../font/dax_bold-webfont.ttf') format('truetype'),
+        url('../font/dax_bold-webfont.svg#daxbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+html, body {
+    font: 1em dax-regular, sans-serif;
+    background-color: #7f7f7f;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-family: dax-bold, sans-serif;
+}
+
+#progress {
+    margin: 2em 0 0 3em;
+}
+
+a {
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+p {
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 2em;
+    color: black;
+    text-decoration: none;
+}
+
+table {
+    border-spacing: 0;
+    width: 6450px;
+}
+
+table td {
+    color: white;
+    padding: 0;
+    font-size: 0;
+}
+
+table thead {
+    background-color: #7f7f7f;
+}
+
+table thead th:first-child, table tbody td:first-child {
+    padding-left: 3em;
+}
+
+table thead th {
+    text-align: center;
+    font-weight: normal;
+}
+
+table thead th.odd {
+    background-color: black;
+    color: white;
+}
+
+table thead th.even {
+    background-color: white;
+    color: black;
+}
+
+table tbody td {
+    height: 400px;
+    background-color: white;
+}
+
+table tbody td.negative {
+    background-color: red;
+    color: red;
+}
+table tbody td.positive.odd {
+    background-color: #0000FF;
+    color: #0000FF;
+}
+
+table tbody td.positive.even {
+    background-color: #00FF00;
+    color: #00FF00;
+}
+
+table tbody td.last {
+    border-right: 1px solid black;
+}
